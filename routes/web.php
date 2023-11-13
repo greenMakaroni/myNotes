@@ -14,5 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard', [
+        'heading' => 'My Notes',
+        'notes' => [
+            [
+                'id' => 1,
+                'title' => 'My first note',
+                'content' => 'Buy milk'
+            ],
+            [
+                'id' => 2,
+                'title' => 'My second note',
+                'content' => 'Meeting with stakeholders at 2pm'
+            ]
+        ]
+    ]);
 });
