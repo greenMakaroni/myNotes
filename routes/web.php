@@ -14,9 +14,18 @@ use App\Models\Note;
 |
 */
 
+// Get all notes
 Route::get('/', function () {
     return view('dashboard', [
         'heading' => 'My Notes',
         'notes' => Note::all()
     ]);
 });
+
+// Get single note
+Route::get('/notes/{id}', function ($id) {
+    return view('note', [
+        'note' => Note::find($id)
+    ]);
+});
+
