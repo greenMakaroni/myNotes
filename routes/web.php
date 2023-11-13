@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Note;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,17 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('dashboard', [
         'heading' => 'My Notes',
-        'notes' => [
-            [
-                'id' => 1,
-                'title' => 'My first note',
-                'content' => 'Buy milk'
-            ],
-            [
-                'id' => 2,
-                'title' => 'My second note',
-                'content' => 'Meeting with stakeholders at 2pm'
-            ]
-        ]
+        'notes' => Note::all()
     ]);
 });
