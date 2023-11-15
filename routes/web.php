@@ -14,7 +14,7 @@ use App\Models\Note;
 |
 */
 
-// Get all notes
+// Get all notes.
 Route::get('/', function () {
     return view('dashboard', [
         'heading' => 'My Notes',
@@ -22,7 +22,7 @@ Route::get('/', function () {
     ]);
 });
 
-// Get single note
+// Get single note, find note by id.
 Route::get('/notes/{id}', function ($id) {
     return view('note', [
         'note' => Note::find($id)
