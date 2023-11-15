@@ -5,26 +5,47 @@ namespace App\Http\Controllers;
 use App\Models\Note;
 use Illuminate\Http\Request;
 
+// Feth Notes Routes:
+// index - Show all notes
+// show - Show single note
+// create - Show form to create new note
+// store - Store new note
+// edit - Show form to edit note
+// update - Update note
+// destroy - Delete note
+
 class NoteController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display all notes.
      */
     public function index()
     {
-        //
+        return view('dashboard', [
+            'notes' => Note::all()
+        ]);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Display single note.
+     */
+    public function show(Note $note)
+    {
+        return view('note', [
+            'result' => Note::find($note)
+        ]);
+    }
+
+    /**
+     * Show the form for creating a new note.
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created note in MySQL.
      */
     public function store(Request $request)
     {
@@ -32,15 +53,7 @@ class NoteController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Note $note)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified note.
      */
     public function edit(Note $note)
     {
@@ -48,7 +61,7 @@ class NoteController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified note in MySQL database.
      */
     public function update(Request $request, Note $note)
     {
@@ -56,7 +69,7 @@ class NoteController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified note from MySQL database.
      */
     public function destroy(Note $note)
     {

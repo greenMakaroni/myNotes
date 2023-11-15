@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NoteController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Note;
@@ -15,17 +16,10 @@ use App\Models\Note;
 */
 
 // Get all notes.
-Route::get('/', function () {
-    return view('dashboard', [
-        'heading' => 'My Notes',
-        'notes' => Note::all()
-    ]);
-});
+Route::get('/', [NoteController::class, 'index']);
+
+// Show create form
+Route::get('/notes/create', [NoteController::class, 'create']);
 
 // Get single note, find note by id.
-Route::get('/notes/{id}', function ($id) {
-    return view('note', [
-        'note' => Note::find($id)
-    ]);
-});
-
+Route::get('/notes/{note}', [NoteController::class, 'show']);

@@ -2,7 +2,9 @@
 
 @section('content')
 
-        <h1> {{$note['title']}} </h1>
-        <p> {{$note['content']}} </p>
+        @foreach ($result as $note)
+            <h1> {{$note->title}} </h1>
+            <p> {{$note->content}} </p>
+        @endforeach
 
 @endsection
