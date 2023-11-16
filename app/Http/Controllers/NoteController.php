@@ -59,7 +59,7 @@ class NoteController extends Controller
         // store note in database
         Note::create($formFields);
 
-        return redirect('/');
+        return redirect('/')->with('message', 'Note created');
     }
 
     /**
