@@ -22,7 +22,7 @@
             <span class="text-[50px] material-symbols-outlined">
                 add
             </span>
-               ADD NOTE
+               New Note
         </a>
          
         </div>
