@@ -45,6 +45,15 @@ class NoteController extends Controller
         return view('create');
     }
 
+    /** 
+     * Show delete prompt
+     */
+    public function delete(Note $note) {
+        return view('delete', [
+            'note' => $note
+        ]);
+    }
+
     /**
      * Store a newly created note in MySQL db.
      */
@@ -59,7 +68,7 @@ class NoteController extends Controller
         // store note in database
         Note::create($formFields);
 
-        return redirect('/')->with('message', 'Note created');
+        return redirect('/')->with('message', 'Note Created!');
     }
 
     /**
@@ -82,7 +91,7 @@ class NoteController extends Controller
 
         $note->update($formFields);
 
-        return redirect('/')->with('message', 'Note updated!');
+        return redirect('/')->with('message', 'Note Updated!');
     }
 
     /**
@@ -90,6 +99,7 @@ class NoteController extends Controller
      */
     public function destroy(Note $note)
     {
-        //
+        $note->delete();
+        return redirect('/')->with('message', 'Note Deleted!');
     }
 }

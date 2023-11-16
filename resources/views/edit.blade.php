@@ -27,17 +27,27 @@
         @enderror
     </div>
 
-    <button 
-        class=
-            "border-2 
-            font-bold 
-            px-[50px] 
-            py-[20px] 
-            uration-300 
-            hover:bg-yellow-100 
-            hover:shadow-xl"> 
+    <div class="flex flex-row justify-between w-[50%]">
+      
+        <a href="/notes/{{$note->id}}"class="px-[50px] py-[15px] border-2 border-yellow-500 hover:bg-yellow-500 hover:text-white font-bold flex items-center duration-300">
+     
+        <span class="text-[50px] material-symbols-outlined">
+            arrow_back
+        </span>
+           Go Back
+     </a>   
 
-        Edit note </button>
+     <button class="px-[50px] py-[15px] border-2 border-green-500 hover:bg-green-500 hover:text-white font-bold flex items-center duration-300"> 
+        <span class="text-[50px] material-symbols-outlined">
+            edit
+        </span>
+        Apply Changes
+    </button>
+
+    </div>
+   
    </form>
+
+
 
 @endsection

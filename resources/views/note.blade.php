@@ -3,8 +3,13 @@
 @section('content')
 
         <div class="flex flex-col">
-            <h1 class="text-6xl mb-[50px]"> {{$note->title}} </h1>
-            <p> {{$note->content}} </p>
+            <h1 class="text-6xl mb-[50px]"> Note Preview </h1>
+                <h2 class="text-lg font-bold mb-[25px]">
+                    {{$note->title}}
+                </h2>
+                <p class="italic">
+                    {{$note->content}} 
+                </p>
 
             <div class="flex flex-row justify-between mt-[150px] w-[50%]">
                 <a 
@@ -26,7 +31,7 @@
                 </span>
                    Edit
             </a>        <a 
-            href="/notes" 
+            href="{{$note->id}}/delete" 
             class="
             px-[50px]
             py-[15px]

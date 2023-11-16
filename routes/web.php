@@ -24,6 +24,9 @@ Route::get('/notes/create', [NoteController::class, 'create']);
 // Show edit form
 Route::get('/notes/{note}/edit', [NoteController::class, 'edit']);
 
+// Show delete prompt
+Route::get('/notes/{note}/delete', [NoteController::class, 'delete']);
+
 // Get single note, find note by id.
 Route::get('/notes/{note}', [NoteController::class, 'show']);
 
@@ -33,3 +36,5 @@ Route::post('/notes', [NoteController::class, 'store']);
 // Update note in DB
 Route::put('/notes/{note}', [NoteController::class, 'update']);
 
+// Delet note from DB
+Route::delete('/notes/{note}', [NoteController::class, 'destroy']);
