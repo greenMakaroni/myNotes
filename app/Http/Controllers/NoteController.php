@@ -32,7 +32,7 @@ class NoteController extends Controller
     public function show(Note $note)
     {
         return view('note', [
-            'result' => Note::find($note)
+            'note' => $note
         ]);
     }
 
