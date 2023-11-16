@@ -45,11 +45,14 @@ class NoteController extends Controller
     }
 
     /**
-     * Store a newly created note in MySQL.
+     * Store a newly created note in MySQL db.
      */
     public function store(Request $request)
     {
-        //
+        $formFields = $request->validate([
+            'title' => 'required',
+            'content' => 'required'
+        ]);
     }
 
     /**

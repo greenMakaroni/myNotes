@@ -19,7 +19,6 @@
     <title> My notes </title>
 </head>
 <body class="w-[100vw] p-[50px]">
-    <h1 class="text-6xl mb-[50px]"> My Notes </h1>
     {{-- VIEW --}}
     @yield('content')
 </body>

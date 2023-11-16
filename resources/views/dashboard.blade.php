@@ -2,6 +2,8 @@
 
 @section('content')
     <br>
+         <h1 class="text-6xl mb-[50px]"> My Notes </h1>
+
         @if(count($notes) == 0)
             <p> You don't have any notes yet...</p>
         @endif

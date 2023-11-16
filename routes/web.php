@@ -21,5 +21,8 @@ Route::get('/', [NoteController::class, 'index']);
 // Show create form
 Route::get('/notes/create', [NoteController::class, 'create']);
 
+// Store note in DB
+Route::post('/notes', [NoteController::class, 'store']);
+
 // Get single note, find note by id.
 Route::get('/notes/{note}', [NoteController::class, 'show']);
