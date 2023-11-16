@@ -8,7 +8,7 @@
 
             <div class="flex flex-row justify-between mt-[150px] w-[50%]">
                 <a 
-                href="/notes/create" 
+                href="{{$note->id}}/edit"
                 class="
                 px-[50px]
                 py-[15px]
@@ -26,7 +26,7 @@
                 </span>
                    Edit
             </a>        <a 
-            href="/notes/create" 
+            href="/notes" 
             class="
             px-[50px]
             py-[15px]

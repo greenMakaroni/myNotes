@@ -52,7 +52,7 @@ class NoteController extends Controller
     {
         // validate data
         $formFields = $request->validate([
-            'title' => ['required', Rule::unique('notes', 'title')],
+            'title' => ['required'],
             'content' => 'required'
         ]);
 
@@ -67,7 +67,7 @@ class NoteController extends Controller
      */
     public function edit(Note $note)
     {
-        //
+        return view('edit', ['note' => $note]);
     }
 
     /**
@@ -75,7 +75,14 @@ class NoteController extends Controller
      */
     public function update(Request $request, Note $note)
     {
-        //
+        $formFields = $request->validate([
+            'title' => ['required'],
+            'content' => 'required'
+        ]);
+
+        $note->update($formFields);
+
+        return redirect('/')->with('message', 'Note updated!');
     }
 
     /**
