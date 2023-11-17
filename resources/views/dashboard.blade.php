@@ -19,7 +19,7 @@
             items-center
             duration-300">
 
-            <span class="text-[50px] material-symbols-outlined">
+            <span class="text-[32px] material-symbols-outlined">
                 add
             </span>
                New Note
@@ -48,8 +48,8 @@
 
         {{-- Flash message --}}
         @if(session()->has('message'))
-            <div class="w-[100vw] flex justify-center opacity-0 animate-displayMessage fixed top-0 z-50">
-                <p class="w-[33vw] flex justify-center bg-green-500  text-white font-bold px-[50px] py-[25px]">
+            <div class="w-[100vw] flex justify-center opacity-0 animate-displayMessage fixed top-2 z-50">
+                <p class="w-[33vw] flex justify-center bg-green-300  text-white font-bold px-[50px] py-[15px]">
                     {{session('message')}}
                 </p>
             </div>

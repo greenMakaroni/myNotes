@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Note;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 
 // Feth Notes Routes:
 // index - Show all notes
@@ -68,7 +67,7 @@ class NoteController extends Controller
         // store note in database
         Note::create($formFields);
 
-        return redirect('/')->with('message', 'Note Created!');
+        return redirect('/')->with('message', 'You have a new note!');
     }
 
     /**

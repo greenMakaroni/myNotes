@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\NoteController;
+use App\Models\Note;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\Note;
+use App\Http\Controllers\NoteController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,3 +39,9 @@ Route::put('/notes/{note}', [NoteController::class, 'update']);
 
 // Delet note from DB
 Route::delete('/notes/{note}', [NoteController::class, 'destroy']);
+
+// Show register form
+Route::get('/register', [UserController::class, 'create']);
+
+// // Create New User
+// Route::post('/users', [UserController::class, 'store']);

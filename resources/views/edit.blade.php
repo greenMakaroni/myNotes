@@ -32,14 +32,14 @@
         
           <a href="/notes/{{$note->id}}"class="px-[50px] py-[15px] border-2 border-yellow-500 hover:bg-yellow-500 hover:text-white font-bold flex items-center duration-300">
        
-          <span class="text-[50px] material-symbols-outlined">
+          <span class="text-[32px] material-symbols-outlined">
               arrow_back
           </span>
-             Go Back
+             Leave
        </a>   
   
        <button class="px-[50px] py-[15px] border-2 border-green-500 hover:bg-green-500 hover:text-white font-bold flex items-center duration-300"> 
-          <span class="text-[50px] material-symbols-outlined">
+          <span class="text-[32px] material-symbols-outlined">
               edit
           </span>
           Apply Changes

@@ -26,10 +26,10 @@
         items-center
         duration-300">
     
-        <span class="text-[50px] material-symbols-outlined">
+        <span class="text-[32px] material-symbols-outlined">
             arrow_back
         </span>
-           Go Back
+           Leave
     </a>       
     
     <form method="POST" action="/notes/{{$note->id}}">
@@ -46,7 +46,7 @@
     flex 
     items-center
     duration-300">
-    <span class="text-[50px] material-symbols-outlined">
+    <span class="text-[32px] material-symbols-outlined">
         delete
     </span>
        Delete Forever
