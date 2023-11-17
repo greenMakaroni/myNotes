@@ -16,6 +16,12 @@ class UserController extends Controller
         return view('register');
     }
 
+     // Show login form
+    public function login() {
+        return view('login');
+    }
+    
+    // Register user, save user data to the database
     public function store(Request $request)
     {
         $formFields = $request->validate([
@@ -41,12 +47,14 @@ class UserController extends Controller
     {
         auth()->logout();
 
+        // clear session data
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
+        // redirect user to the root
         return redirect('/')->with('message', 'Logged out!');
     }
 
-
+    // Authenticate user
 
 }

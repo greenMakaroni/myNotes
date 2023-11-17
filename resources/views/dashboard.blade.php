@@ -76,7 +76,7 @@
         
         <div class="flex flex-col w-[100vw] h-[100vh] p-[100px] justify-center items-center">
             <h1 class="text-6xl mb-[50px]"> My Notes </h1>
-            <a href="/login"class="mb-[100px] w-[200px] px-[50px] py-[15px] border-2 border-green-500 hover:bg-green-500 hover:text-white font-bold flex items-center duration-300">
+            <a href="/login" class="mb-[100px] w-[200px] px-[50px] py-[15px] border-2 border-green-500 hover:bg-green-500 hover:text-white font-bold flex items-center duration-300">
        
                 <span class="text-[32px] mr-[15px] material-symbols-outlined">
                     login
