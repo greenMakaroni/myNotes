@@ -41,16 +41,16 @@ Route::put('/notes/{note}', [NoteController::class, 'update'])->middleware('auth
 Route::delete('/notes/{note}', [NoteController::class, 'destroy'])->middleware('auth');
 
 // Show register form
-Route::get('/register', [UserController::class, 'create']);
+Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
 // Show login form
-Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 
 // Create New User
-Route::post('/users', [UserController::class, 'store']);
+Route::post('/users', [UserController::class, 'store'])->middleware('guest');
 
 // Log in
-Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+Route::post('/users/authenticate', [UserController::class, 'authenticate'])->middleware('guest');
 
 // Logout User
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
