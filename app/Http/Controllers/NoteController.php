@@ -31,6 +31,11 @@ class NoteController extends Controller
      */
     public function show(Note $note)
     {
+        // Make sure logged in user is owner
+        if($note->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
+
         return view('note', [
             'note' => $note
         ]);
@@ -64,6 +69,7 @@ class NoteController extends Controller
             'content' => 'required'
         ]);
 
+        $formFields['user_id'] = auth()->id();
         // store note in database
         Note::create($formFields);
 
@@ -75,6 +81,7 @@ class NoteController extends Controller
      */
     public function edit(Note $note)
     {
+        
         return view('edit', ['note' => $note]);
     }
 
@@ -83,6 +90,11 @@ class NoteController extends Controller
      */
     public function update(Request $request, Note $note)
     {
+        // Make sure logged in user is owner
+        if($note->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
+
         $formFields = $request->validate([
             'title' => ['required'],
             'content' => 'required'
@@ -98,6 +110,11 @@ class NoteController extends Controller
      */
     public function destroy(Note $note)
     {
+        // Make sure logged in user is owner
+        if($note->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
+
         $note->delete();
         return redirect('/')->with('message', 'Note Deleted!');
     }
