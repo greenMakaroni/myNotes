@@ -20,31 +20,31 @@ use App\Http\Controllers\UserController;
 Route::get('/', [NoteController::class, 'index']);
 
 // Show create form
-Route::get('/notes/create', [NoteController::class, 'create']);
+Route::get('/notes/create', [NoteController::class, 'create'])->middleware('auth');
 
 // Show edit form
-Route::get('/notes/{note}/edit', [NoteController::class, 'edit']);
+Route::get('/notes/{note}/edit', [NoteController::class, 'edit'])->middleware('auth');
 
 // Show delete prompt
-Route::get('/notes/{note}/delete', [NoteController::class, 'delete']);
+Route::get('/notes/{note}/delete', [NoteController::class, 'delete'])->middleware('auth');
 
 // Get single note, find note by id.
-Route::get('/notes/{note}', [NoteController::class, 'show']);
+Route::get('/notes/{note}', [NoteController::class, 'show'])->middleware('auth');
 
 // Store note in DB
-Route::post('/notes', [NoteController::class, 'store']);
+Route::post('/notes', [NoteController::class, 'store'])->middleware('auth');
 
 // Update note in DB
-Route::put('/notes/{note}', [NoteController::class, 'update']);
+Route::put('/notes/{note}', [NoteController::class, 'update'])->middleware('auth');
 
 // Delet note from DB
-Route::delete('/notes/{note}', [NoteController::class, 'destroy']);
+Route::delete('/notes/{note}', [NoteController::class, 'destroy'])->middleware('auth');
 
 // Show register form
 Route::get('/register', [UserController::class, 'create']);
 
 // Show login form
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])->name('login');
 
 // Create New User
 Route::post('/users', [UserController::class, 'store']);
@@ -53,4 +53,4 @@ Route::post('/users', [UserController::class, 'store']);
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 // Logout User
-Route::post('/logout', [UserController::class, 'logout']);
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
