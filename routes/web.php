@@ -43,5 +43,11 @@ Route::delete('/notes/{note}', [NoteController::class, 'destroy']);
 // Show register form
 Route::get('/register', [UserController::class, 'create']);
 
+// Show login form
+
+
 // Create New User
 Route::post('/users', [UserController::class, 'store']);
+
+// Logout User
+Route::post('/logout', [UserController::class, 'logout']);
