@@ -21,9 +21,15 @@ class NoteController extends Controller
      */
     public function index()
     {
-        return view('dashboard', [
-            'notes' => Note::all()
-        ]);
+        if(auth()->id() != null) {
+            return view('dashboard', [
+                'notes' => auth()->user()->notes()->get()
+            ]);
+        }
+        else {
+            return view('dashboard');
+        }
+  
     }
 
     /**

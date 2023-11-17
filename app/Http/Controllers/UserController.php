@@ -8,7 +8,7 @@ use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
-        /**
+    /**
      * Show the user register form.
      */
     public function create()

@@ -23,6 +23,12 @@ class User extends Authenticatable
         'password',
     ];
 
+    // Relationship To Note
+    public function notes() 
+    {
+        return $this->hasMany(Note::class, 'user_id');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -43,9 +49,5 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    // Relationship To Note
-    public function notes() 
-    {
-        return $this->hasMany(Note::class, 'user_id');
-    }
+
 }
