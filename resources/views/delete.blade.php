@@ -11,48 +11,25 @@
             {{$note->content}} 
         </p>
     </div>
+
     <div class="flex flex-row justify-between mt-[150px] w-[50%]">
-        <a 
-        href="/notes/{{$note->id}}"
-        class="
-        px-[50px]
-        py-[15px]
-        border-2 
-        border-yellow-500 
-        hover:bg-yellow-500 
-        hover:text-white 
-        font-bold 
-        flex 
-        items-center
-        duration-300">
+        <a href="/notes/{{$note->id}}" class="text-[12px] px-[50px] py-[15px] border-2  border-yellow-500  hover:bg-yellow-500  hover:text-white  font-bold  flex  items-center duration-300">
+            <span class="mr-[15px] material-symbols-outlined">
+                arrow_back
+            </span>
+            Leave
+        </a>       
     
-        <span class="text-[32px] material-symbols-outlined">
-            arrow_back
-        </span>
-           Leave
-    </a>       
-    
-    <form method="POST" action="/notes/{{$note->id}}">
-    @csrf 
-    @method('DELETE')
-    <button class="
-    px-[50px]
-    py-[15px]
-    border-2 
-    border-red-500 
-    hover:bg-red-500 
-    hover:text-white 
-    font-bold 
-    flex 
-    items-center
-    duration-300">
-    <span class="text-[32px] material-symbols-outlined">
-        delete
-    </span>
-       Delete Forever
-    </button>
-    
-    </form>
+        <form method="POST" action="/notes/{{$note->id}}">
+            @csrf 
+            @method('DELETE')
+            <button class="text-[12px] px-[50px] py-[15px] border-2 border-red-500 hover:bg-red-500 hover:text-white font-bold flex items-center duration-300">
+                <span class="mr-[15px] material-symbols-outlined">
+                    delete
+                </span>
+                Delete Forever
+            </button>
+        </form>
     </div>
 </div>
 

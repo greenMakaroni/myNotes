@@ -47,7 +47,7 @@
         </style>
     <title> My notes </title>
 </head>
-<body class="w-[100vw] p-[50px]">
+<body class="w-[100vw] p-[25px]">
     {{-- pop up message --}}
   
 
