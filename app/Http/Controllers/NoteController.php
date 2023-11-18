@@ -108,7 +108,7 @@ class NoteController extends Controller
 
         $note->update($formFields);
 
-        return redirect('/')->with('message', 'Note Updated!');
+        return redirect('/')->with('message', 'Note updated!');
     }
 
     /**
@@ -122,6 +122,6 @@ class NoteController extends Controller
         }
 
         $note->delete();
-        return redirect('/')->with('message', 'Note Deleted!');
+        return redirect('/')->with('message', 'Note destroyed!');
     }
 }

@@ -8,6 +8,11 @@
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    {{-- Google Fonts --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Outfit:wght@400;700&display=swap" rel="stylesheet"> 
+    
     <!-- Google Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
  
@@ -47,7 +52,7 @@
         </style>
     <title> My notes </title>
 </head>
-<body class="w-[100vw] p-[25px]">
+<body class="overflow-x-hidden w-[100vw] p-[25px]">
     {{-- pop up message --}}
   
 
