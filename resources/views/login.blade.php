@@ -3,8 +3,8 @@
 @section('content')
 
   <header class="text-center">
-    <h1 class="font-['Montserrat'] text-6xl mb-[50px]">Login</h1>
-    <p class="font-['Montserrat']">Log into your account to post notes</p>
+    <h1 class="font-['Montserrat'] text-6xl mb-[25px] mt-[25px]">Login</h1>
+    <p class="font-['Montserrat'] mb-[25px]">Log into your account to post notes</p>
   </header>
 
   <form method="POST" action="/users/authenticate" class="w-[100vw - 50px] pt-[50px] flex flex-col justify-center items-center">
@@ -30,8 +30,8 @@
       @enderror
     </div>
 
-    <div class="mb-2 mt-4">
-      <button type="submit" class="font-['Montserrat'] text-[12px] mb-[100px] px-[50px] py-[15px] border-2 border-green-500 hover:bg-green-500 hover:text-white font-bold flex items-center duration-300">
+    <div class="mb-[25px] mt-4">
+      <button type="submit" class="font-['Montserrat'] text-[12px] px-[50px] py-[15px] border-2 border-green-500 hover:bg-green-500 hover:text-white font-bold flex items-center duration-300">
         <span class="mr-[15px] material-symbols-outlined">
             login
         </span>

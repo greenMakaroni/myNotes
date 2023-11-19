@@ -3,8 +3,8 @@
 @section('content')
 
   <header class="text-center">
-    <h1 class="font-['Montserrat'] text-6xl mb-[50px]">Register</h1>
-    <p class="font-['Montserrat'] mb-4">Create an account to post notes.</p>
+    <h1 class="font-['Montserrat'] text-6xl mb-[15px] mt-[25px]">Register</h1>
+    <p class="font-['Montserrat'] mb-[25px]">Create an account to post notes.</p>
   </header>
 
   <form method="POST" action="/users" class="w-[100vw - 50px] pt-[50px] flex flex-col justify-center items-center">
@@ -48,7 +48,7 @@
       @enderror
     </div>
 
-    <div class="mb-6 mt-3">
+    <div class="mb-[15px] mt-3">
       <button class="font-['Montserrat'] flex justify-center items-center text-[12px] w-[300px] px-[50px] py-[15px] border-2 border-green-500 hover:bg-green-500 hover:text-white font-bold flex items-center duration-300"> 
           <span class="mr-[15px] material-symbols-outlined">
               person_add

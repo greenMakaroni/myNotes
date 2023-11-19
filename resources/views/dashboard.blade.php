@@ -4,9 +4,9 @@
         @auth
             {{-- Register / Logout bar --}}
             <div class="flex justify-end mb-[50px]">
-                <form class="inline" method="POST" action="/logout">
+                <form class="z-50 inline" method="POST" action="/logout">
                     @csrf
-                    <button type="submit" class="z-50 font-['Montserrat'] text-[12px] px-[50px] py-[15px] border-2  border-red-500  hover:bg-red-500  hover:text-white  font-bold  flex  items-center duration-300" >
+                    <button type="submit" class="w-[200px] font-['Montserrat'] text-[12px] px-[25px] py-[15px] border-2  border-red-500  hover:bg-red-500  hover:text-white  font-bold  flex  justify-center items-center duration-300" >
                         <span class="mr-[15px] material-symbols-outlined">
                             logout
                         </span>
@@ -18,12 +18,12 @@
 
             {{-- App header --}}
             <div class="flex items-center justify-between flex-row">    
-                <h1 class="font-['Montserrat'] font-bold text-6xl mb-[50px]"> My Notes </h1>
-                <a href="/notes/create" class="font-['Montserrat'] text-[12px] px-[50px] py-[15px] border-2 border-green-500 hover:bg-green-500 hover:text-white font-bold flex items-center duration-300">
+                <h1 class="font-['Montserrat'] text-6xl mb-[50px]"> My Notes </h1>
+                <a href="/notes/create" class="w-[200px] font-['Montserrat'] text-[12px] px-[25px] py-[15px] border-2 border-green-500 hover:bg-green-500 hover:text-white font-bold flex justify-center items-center duration-300">
                     <span class="mr-[15px] material-symbols-outlined">
                         add
                     </span>
-                        New Note
+                    New Note
                 </a>
             </div>
     
@@ -49,7 +49,7 @@
     
             {{-- Flash message --}}
             @if(session()->has('message'))
-                <div class="w-[100vw] flex justify-center opacity-0 animate-displayMessage fixed top-5 z-50">
+                <div class="w-[100vw] flex justify-center opacity-0 animate-displayMessage fixed top-5 z-20">
                     <p class="font-['Montserrat'] font-bold w-[33vw] flex justify-center bg-green-300  text-white font-bold px-[50px] py-[15px]">
                         {{session('message')}}
                     </p>
@@ -57,8 +57,8 @@
             @endif  
         {{-- ELSE USER NOT AUTHENTICATED --}}
         @else
+            <h1 class="w-[100vw] text-center font-['Montserrat'] text-6xl mt-[75px] "> My Notes </h1>
             <div class="flex flex-col w-[100vw] h-[100vh] p-[100px] justify-center items-center">
-                <h1 class="font-['Montserrat'] text-6xl mb-[50px]"> My Notes </h1>
                 <a href="/login" class="font-['Montserrat'] text-[12px] mb-[50px] w-[200px] px-[50px] py-[15px] border-2 border-green-500 hover:bg-green-500 hover:text-white font-bold flex items-center duration-300">
                     <span class="mr-[15px] material-symbols-outlined">
                         login
